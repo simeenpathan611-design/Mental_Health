@@ -1,0 +1,900 @@
+/* If  you want responsive site , write in 'rem units' rather than px */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+/* ########################### HTML ELEMENT STYLING ##################### */
+
+
+
+/* changing for being responsive to diff devices ,,,,by default is 16px*/ 
+
+html{
+    /* font-size: 10px; */
+    /* 16px --- 100% */
+    /* 16px --- (100/16)*10 == 62.5% */
+    font-size: 62.5%;
+
+}
+
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
+}
+
+
+ul li{
+    list-style: none;
+}
+
+
+a{
+    font-size: 1.6rem;            /*  ==16px */
+    text-decoration: none;        /*removed underline from down*/
+    padding: 0.3rem;
+    
+}
+
+
+p, li{
+    font-size: 1.6rem;
+    margin-bottom: 0.5em;    /*if 16px isze then margin is 8px -- HALF -- automatically ajust screeen for mobiles*/
+    letter-spacing: 0.15em;
+}
+
+ /* all headings */
+
+h1, h2, h3{
+    margin-bottom: 0.5em;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+
+}
+
+
+.navbar a:link,
+.navbar a:visited{
+    color: #f4f4f4;
+}
+
+
+.navbar a:hover{
+    border-bottom: 1px solid black;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+/* #############  UTILITY CLASSES ###############  -- assign properties to one class and assign it to required elements to modify*/
+
+
+/* one utility class = 1 property only */
+
+
+.lg-heading{
+    font-size: 3.5rem;
+}
+
+.md-heading{
+    font-size: 2.0rem;
+}
+
+.text-red{
+    color: #e63946;
+}
+
+
+.text-light{
+    color: #f4f4f4;
+}
+
+
+.text-black{
+    color: #070707;
+}
+
+
+.text-grey{
+    color: #555;
+}
+
+
+/* for about page navabr */
+.bg-dark{
+    background-color: #555353;
+
+}
+
+
+.btn{
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0.5em 0;
+}
+
+
+.btn-1{
+    background-color: white;
+    border-radius: 100px;          /* px -- gets curve better shape than % */
+}
+
+
+.btn-1:hover{
+    background-color: #f0dadc;
+    transition: 0.3s ease-in-out;
+}
+
+
+.btn-2{
+    border:2px solid red ;
+    border-radius: 1.5em;           /* if 16px textsize then 16*1.5 = 24px size buttion */
+    color: #e63946;
+    background-color: white;
+}
+
+
+.btn-2:hover{
+    background-color: #f0dadc; 
+    transition: 0.3s ease-in-out;
+}
+
+
+ /* Making Container and mocing all items on website isndie it */
+
+ .container{
+    max-width: 1300px;         /*    use max -- as if screen minimizes ,scrollbar dosent appear */
+    width: 90%;                /*    if screen reduces than 1300px then the gap is left even if minimized screen */
+    margin: 0 auto;
+ }
+
+
+
+.nav-item:hover{
+    transform:translateY(-10px);
+    transition: 0.2s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+/* $$$$$$$$$$$$$$$$$$ HEADER STYLING $$$$$$$$$$$$$$$$$$$ */
+
+
+.header{ 
+    height: 97vh;       /* Header view port */
+    background-image: url('./images/mental-health-of-a-person.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;              /* kept relative as it will be relative for header content(absolute) */
+}
+
+
+/* 
+.header .logo,     ----as it has more specificity than text red/utility classes
+.header .navbar a{
+    color: black;
+}
+ */
+
+
+.navbar{
+    padding: 1rem;
+}
+
+
+.navbar .logo{
+    float: left;
+    font-size: 3.5rem;         /* ==35px  -- or also use utility class*/
+    margin-top: 1.1rem;
+}
+
+
+.navbar .nav-items{
+    float: right;
+    margin-top: 1rem;
+}
+
+
+/* clearing float using psuedo elements */
+
+.navbar::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+.header .navbar .nav-item{
+    display: inline-block;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+/* ################## HEADER CONTENT STLING ################### */
+
+
+.header-content{
+    
+    position: absolute;  
+    top: 50%;
+    left: 50%;           /* although we use it , it is not centered , so we transform it */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* background: linear-gradient(rgba(), rgba()); --- to change bg of content*/   
+}
+
+
+.header-content h1{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
+.header-content p{
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+/* ################### SHOWCASE SECTION STYLING ####################  */
+
+
+.showcase{
+    background: #eeeeee;
+    padding: 10rem 0;
+}
+
+
+.row{
+    height: 350px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 0px #aaaaaaea;
+}
+
+
+.row1, .row2, .row3{
+    margin-bottom: 10rem;
+}
+
+
+/* the img & txt sect of row1,2 same editing */
+
+.row1 .img-box, .row2 .text-box,
+.row3 .img-box, .row4 .text-box{    
+    width: 50%;
+    float: left; 
+}
+
+
+.row1 .text-box, .row2 .img-box,
+.row3 .text-box, .row4 .img-box{    
+    width: 50%;
+    float: right;
+}
+
+
+/* clearing floats */
+
+.row::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+.row .img-box{
+    height: 100%;
+}
+
+
+.row .text-box{
+    padding: 2rem;
+    
+}
+
+
+
+/* modify image settinga to fit in box */
+
+.row .img-box img{
+    display: inline-block;       /* By default img is inline -- for responsive change to inline-block */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* as it will not change aspect ratio of image wvwn when screen minimizes */
+} 
+
+
+
+
+
+
+
+
+
+
+/* ####################### Features section styling ##################### */
+
+
+.features{
+    padding: 10rem 0;
+}
+
+
+.full-box{
+    box-shadow: 5px 5px 21px rgba(0, 0, 0, 0.651);
+
+}
+
+
+.box{
+    width: 33.33333%;
+    float: left;
+    padding: 2rem;
+    text-align: center;
+}
+
+
+.box-1, .box-3{
+    background-color: #555353;
+    color: white;
+}
+
+
+.box-2{
+    background-color: #e67979ea;
+}
+
+
+/* doing this to clear float issue as they come out of the box if only float is used */
+
+.full-box::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+/* ############################ FOOTER ############################ */
+
+
+.footer{
+    background-color: #555353;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+
+}
+
+
+/* spacing footer icons*/
+.social-links i{
+    margin: 2rem;
+
+}
+
+
+
+
+
+
+
+
+
+/* %%%%%%%%%%%%^^^^^^^^^^^^^ ABOUT PAGE STYLING ^^^^^^^^^^^^%%%%%%%%%%%%%%%% */
+
+
+.about{
+    padding: 5rem 0;
+}
+
+
+/* drawing line using pseudo elements is better as to modify width -- hght */
+.about-heading::after{
+    content: '';
+    display: block;
+    border: 3px solid #e67979ea;
+    width: 100%;
+}
+
+
+
+
+
+/* LISST STYLING */
+
+.about-list{
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+
+.about-list .left{
+    float: left;
+    width: 50%;
+
+}
+
+
+.about-list .right{
+    float: right;
+    width: 50%;
+
+}
+
+
+/* clearing float */
+.about-list::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+.about-list li::before{
+
+    content: '\2713';    /* TIck amrk code */
+    color: #e63946;
+    font-weight: bold;
+    padding-right: 1rem ;
+}
+
+
+
+
+
+
+
+/* $$$$$$$$$$$$$ count styling  $$$$$$$$$$$$$$$$$$$*/
+
+.counts{
+    margin-top: 3rem;
+}
+
+.count-item{
+    float:left;
+    width: 25%;
+    text-align: center;
+}
+
+
+/* float remove */
+.counts::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+span{
+    font-size: 3rem; /* 2opx */
+    font-weight: 600;
+    color: #e63946;
+}
+
+.count-item p{
+    font-weight: 600;
+    color: #555;
+}
+
+
+
+
+
+
+
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$ banner Styling $$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+.banner{
+    background-color: #e3525e;
+    color: white;
+    padding: 1rem;
+    box-shadow: 5px 5px 10px rgb(183, 181, 181);
+    margin-top: 3rem;
+}
+
+
+.banner-left{
+    float: left;
+    width: 70%;
+}
+
+
+.banner-right{
+    float: right;
+    width: 30%;
+    text-align: right;
+}
+
+
+.banner-line{
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1.4rem;
+}
+
+
+.banner-btn{
+    text-align: center;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    border: 4px solid white;
+    padding: 0.3em 2.5em;
+    letter-spacing: 0.5rem;
+    color: white;
+}
+
+
+.banner::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+ /* %$%$%$%$%$%$%$$^^^^^^^^^^^^^ CONTACT PAGE ^^^^^^^^^^^^^^^^^^^%$%$%%$%%$%$%$ */
+
+
+
+
+ .contact-form{
+    padding: 5rem 0;
+    background: #e3e0e0;;
+ }
+
+
+
+ .full-form .company-address{
+    float: left;
+    width: 49%;
+    height: 760px;
+    background: #fff;
+    padding: 1rem;
+ }
+
+
+
+
+.full-form::after{
+    content: '';
+    display:block;
+    clear: both;
+}
+
+
+/* company add */
+
+.full-form .company-address i{
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+
+
+.full-form .company-address h2{
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+
+.full-form .address-group{
+    margin-bottom: 3rem;
+}
+
+
+/*img */
+.full-form .company-address img{
+    max-width: 90%;
+    min-height: 40rem;
+    object-fit: cover;  /* aspect ratio stable */
+    object-position: right;  /* made img fix from right side */
+}
+
+
+
+
+
+
+
+ /* @@@@@@@@@@@@@@ 2nd Form Styling @@@@@@@@@@@ */
+
+
+ 
+ .full-form .form{
+    float: right;
+    height: 760px;
+    font-size: 1.6rem;
+    width: 49%;
+    background: #fff;
+    padding: 1rem;
+}
+
+
+
+.form h1::after{
+    content: '';
+    display: block;
+    border: 3px solid #e3525e;
+    width: 100%;
+}
+
+
+.full-form label{
+    display: block;
+}
+
+
+.full-form .form input{
+    padding: 0.5rem;
+    width: 100%;
+}
+
+
+.full-form .form .form-group{
+    margin-bottom: 1.2rem;
+}
+
+
+.full-form .form label::after{
+    content: '*';
+    color: #e3525e;
+
+}
+
+
+.full-form .form textarea{
+    width: 100%;
+    height: 300px;
+    padding: 1rem;
+}
+
+
+.form-btn{
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em 3em;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    background-color: #e15e69;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* +++++++++^^^^^^^^^^^^^    MEDIA QUERIES   ^^^^^^^^^^+++++++++++++++  */
+
+/* DEVICES LESS than 500 px */
+
+@media(max-width: 500px){
+    
+    html{
+        font-size: 50%;   /* half of set size */
+    }
+
+    .navbar .nav-items, .navbar .logo{
+        float: none;
+        display: block;
+        width:100%;
+    }
+
+    .row{
+        height: auto;
+        width: 100%;
+    }
+
+
+    .row .img-box, .row .text-box{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .features .box{
+        float: none;
+        width: 100%;
+        text-align: center;
+        box-shadow: 5px 5px 10px rgba(117, 114, 114, 0.793);
+    }
+
+    .features .box-2, .box-3{
+        margin-top: 5rem ;
+    }
+
+
+    .full-box{
+        box-shadow: none;
+    }
+
+
+    .banner-left, .banner-right{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .full-form .company-address{
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 5rem;
+
+    }
+
+    .full-form .form{
+        float: none;
+        width: 100%;
+        height: auto;
+
+    }
+}
+
+
+
+@media(min-width: 501px) and (max-width: 768px){
+
+    html{
+        font-size: 50%;   /* half of set size */
+    }
+
+    p{
+        font-size: 1.8rem;
+    }
+
+    .navbar .nav-items, .navbar .logo{
+        float: none;
+        display: block;
+        width:100%;
+    }
+
+    .row{
+        height: auto;
+        width: 100%;
+    }
+
+    .row .img-box, .row .text-box{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .features .box{
+        float: none;
+        width: 100%;
+        text-align: center;
+        box-shadow: 5px 5px 10px rgba(117, 114, 114, 0.793);
+    }
+
+    .features .box-2, .box-3{
+        margin-top: 5rem ;
+    }
+
+
+    .full-box{
+        box-shadow: none;
+    }
+
+
+    .banner-left, .banner-right{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .full-form .company-address{
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 5rem;
+
+    }
+
+    .full-form .form{
+        float: none;
+        width: 100%;
+        height: auto;
+
+    }
+}
+
+
+
+
+
+@media(min-width: 769px) and (max-width: 1200px){
+
+    html{
+        font-size: 56.25%;  /* 900/16*/
+
+    }
+
+    .row.text-box h2{
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
+
+}
+
+
+@media(orientation: landscape) and (max-height: 500px){
+    .header{
+        height: 90vmax;  /*jevdhi width tyachya 90% ht */
+    }
+}
